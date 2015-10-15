@@ -2,5 +2,50 @@
 
 <p>here is a list of states...</p>
 
+<form name="hwform" id="hwform">
+	<p>
+		<label>Full Name<br/>
+			<input name = "name" type = "text">
+		</label>
+	</p>
+
+	<p>
+		<label>Address<br/>
+			<textarea name = "address" form = "hwform">Enter your street address according to US postal standards.</textarea>
+		</label>
+	</p>
+
+	<p>
+		<label>City<br/>
+			<input name = "city" type = "text">
+		</label>
+	</p>
+
+	<p>
+		<select name="State">
+		<% @states.each do |state| %>
+			<option value= <%= state[:id]%>>
+				<%= state[:name]%>
+			</option>
+		<%end%>
+		</select>
+	</p>
+
+	<p>
+		<label>Zip<br/>
+			<input name = "zip" type = "text">
+		</label>
+	</p>
+
+	 <p>
+  		<label>
+    		<input name="agreement" type="checkbox" value = "1"> I agree...
+  		</label>
+ 	</p>
+
+</form>	
+
+<%= params %>
+
 <!-- iterate through each state in the array and put them into list items individually -->
 
